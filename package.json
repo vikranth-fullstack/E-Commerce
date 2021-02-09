@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/SaiDev123/ecommerce-backend/issues"
   },
-  "homepage": "https://github.com/SaiDev123/ecommerce-backend#readme"
+  "homepage": "https://github.com/SaiDev123/ecommerce-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.15",
+    "nodemailer": "^6.4.17",
+    "razorpay": "^2.0.6"
+  }
 }
