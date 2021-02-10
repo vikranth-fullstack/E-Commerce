@@ -1,10 +1,12 @@
 var mongoose= require('mongoose');
 
+var Config=require('./app.config');
+
 exports.connect=() => {
 
     //url:  mongodb+srv://sai:<password>@ecommerce.obdec.mongodb.net/<dbname>?retryWrites=true&w=majority
 
-    mongoose.connect('mongodb+srv://sai:sai@ecommerce.obdec.mongodb.net/7amecommerce?retryWrites=true&w=majority',{ useUnifiedTopology: true, useNewUrlParser: true },(err)=>{
+    mongoose.connect(Config.config.MONGO_URL,{ useUnifiedTopology: true, useNewUrlParser: true },(err)=>{
         if(err){
             console.log(err);
         }
