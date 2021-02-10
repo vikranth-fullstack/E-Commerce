@@ -20,3 +20,21 @@ exports.registerUser=(request,response) => {
       })
 
 }
+exports.loginUser=(request,response) => {
+
+    UserModel.findOne({'username':request.body.username,'password':request.body.password}).then((user)=>{
+        if(user){
+            console.log(user);
+            var payload={id:user._id,email:user.emailId};
+            var token=JWT.sign(payload,Config.config.JWT_SECRET)
+            response.send({result:"success",token:token});  
+        }
+        else{
+            response.send({result:"invalid user details"});  
+        }
+    },(error)=>{
+        console.log(error);
+        response.send({result:"Failure"});   
+    });
+    
+}
